@@ -1,0 +1,5 @@
+﻿SI-Dipoles-B1
+
+Model05: Magnet full central gap increased from 37mm to 39mm to allow the use of pole face strips.
+
+Model06: Added 45° chamfers on end-plates to reduce the quadrupole gradient and higher-order multipole terms.
