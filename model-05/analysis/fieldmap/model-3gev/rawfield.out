@@ -1,0 +1,16 @@
+(780390,)
+(130065, 6)
+--- fieldmap ---
+timestamp:                          2017-01-09_16-54-46
+filename:                           2017-01-09_B1_Model05_Sim_X=-32_32mm_Z=-1000_1000mm_Imc=438A.txt
+magnet_label:                       B1
+magnet_length:                      807.0 mm
+main_coil_current:                  438 A
+magnetic_gap:                       39.0 mm
+control_gap:                        None mm
+ry_grid:                            1 point in [0.0,0.0] mm (step of 0.000000 mm)
+rx_grid:                            65 points in [-32.0,32.0] mm (step of 1.000000 mm)
+rz_grid:                            2001 points in [-1000.0,1000.0] mm (step of 1.000000 mm)
+by@(all)(axis):                     (min:-0.83120 max:-0.00016) (min:-0.58713 max:-0.00017) Tesla
+bx@(all)(axis):                     (min:-0.00000 max:+0.00000) (min:-0.00000 max:+0.00000) Tesla
+bz@(all)(axis):                     (min:-0.00000 max:+0.00000) (min:-0.00000 max:+0.00000) Tesla
