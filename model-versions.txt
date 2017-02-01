@@ -1,0 +1,6 @@
+﻿SI-Dipoles-B1
+
+2017-02-01  Model08   Removed end-plate chamfers, decreased core width and changed pole profile to reduce residual multipoles.
+2017-01-20  Model07   Changed pole profile to keep B1 and B2 poles equal. Internal end-plates of B1 have different chamfers.
+2017-01-09  Model06   Added 45° chamfers on end-plates to reduce the quadrupole gradient and higher-order multipole terms.
+2017-01-09  Model05   Magnet full central gap increased from 37mm to 39mm to allow the use of pole face strips. Yoke has changes to lower center of mass.
