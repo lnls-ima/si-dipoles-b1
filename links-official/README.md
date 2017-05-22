@@ -1,11 +1,11 @@
 Sirius B1 dipoles
 =================
 
-current official model version : model-07
+current official model version : model-09
 
-fieldmap analysis folder       : model-3gev
+fieldmap analysis folder       : 3gev
 
-fieldmap file                  : 2017-01-19_B1_Model07_Sim_X=-32_32mm_Z=-1000_1000mm_Imc=452.4A.txt
+fieldmap file                  : 2017-05-17_B1_Model09_Sim_X=-32_32mm_Z=-1000_1000mm_Imc=394.1A.txt
 
 
 Observations
