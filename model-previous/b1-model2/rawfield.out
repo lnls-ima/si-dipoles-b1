@@ -1,0 +1,14 @@
+--- fieldmap ---
+timestamp:                          2015-11-19_10-19-33
+filename:                           2015-11-19_Dipolo_Anel_B1_Modelo2_-32_15mm_-1000_1000mm.txt
+magnet_label:                       B1
+magnet_length:                      806.72 mm
+main_coil_current:                  7925 A
+magnetic_gap:                       33.0 mm
+control_gap:                        None mm
+ry_grid:                            1 point in [0.0,0.0] mm (step of 0.000000 mm)
+rx_grid:                            95 points in [-32.0,15.0] mm (step of 0.500000 mm)
+rz_grid:                            2001 points in [-1000.0,1000.0] mm (step of 1.000000 mm)
+by@(all)(axis):                     (min:-0.84761 max:-0.00015) (min:-0.59702 max:-0.00016) Tesla
+bx@(all)(axis):                     (min:-0.00000 max:+0.00000) (min:-0.00000 max:+0.00000) Tesla
+bz@(all)(axis):                     (min:-0.00000 max:+0.00000) (min:-0.00000 max:+0.00000) Tesla
