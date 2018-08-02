@@ -1,3 +1,6 @@
+rotation.txt
+
+# --------------- Default lnls-ima ---------------
 *~
 
 # Magnet files with solutions
@@ -7,17 +10,12 @@
 *.stp
 *.step
 
-# Previous model versions
-#model-previous/*.gz
-#model-previous/*.zip
-
 # Igor Pro Experiments
 *.pxp
 
-# Tests and temporary files
-**/tests
-*_ignore.*
-rotation.txt
+# Previous model versions
+#model-previous/*.gz
+#model-previous/*.zip
 
 # Reports
 *_Report.pdf
@@ -74,5 +72,35 @@ coverage.xml
 # Django stuff:
 *.log
 
+# Doxygen documentation
+*/doc/html/
+*/doc/documentation.html
+
 # PyBuilder
 target/
+
+# OS generated files #
+ehthumbs.db
+Thumbs.db
+
+# eclipse specific git ignore
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
