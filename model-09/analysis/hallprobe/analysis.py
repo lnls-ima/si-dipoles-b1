@@ -868,6 +868,7 @@ def load_analysis_result(folder, plots=None):
         plt.ylabel('Diff. between refpoint rx to nominal [um]', fontsize=20)
         plt.show()
 
+
 def save_readme_files():
     """."""
     header = (
@@ -886,7 +887,7 @@ def save_readme_files():
     sfmt = ('|{0:^10s}| {1:^+12.5f} | {2:^+12.5f} | {3:^+12.5f} '
             '| {4:^+12.5f} |\n')
 
-    magnets, currents, data = load_analysis_result_x0_8p285mm(False)
+    magnets, currents, data = load_analysis_result('x0-8p365mm/', False)
 
     for current in currents:
         for side in ('Zpositive', 'Znegative'):
@@ -924,10 +925,10 @@ def run():
     # load_search_reference_points_file()
     # plot_results_search_reference_points_B1()
     # generate_inputs_reference_point_B1()
-    load_analysis_result('x0-8p365mm/', ('dangle', 'refrx', 'quad'))
+    # load_analysis_result('x0-8p365mm/', ('dangle', 'refrx', 'quad'))
     # load_search_reference_points_file_relaxed()
     # plot_results_search_reference_points_relaxed_B1()
-    # save_readme_files()
+    save_readme_files()
 
     # currents, magnets, energies = \
     #     load_search_deflection_angle_file(fname='search-energies-shifted-x0.txt')
