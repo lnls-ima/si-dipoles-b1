@@ -1,0 +1,14 @@
+--- fieldmap ---
+timestamp:                          2018-12-16_15-13-08
+filename:                           2018-12-16_B1-029_Hall_X=-32_32mm_Z=-800_800mm_Imc=421.9A_ID=999.dat
+magnet_label:                       B1-029
+magnet_length:                      808.4 mm
+main_coil_current:                  421.9 A
+magnetic_gap:                       39.0 mm
+control_gap:                        None mm
+ry_grid:                            1 point in [0.0,0.0] mm (step of 0.000000 mm)
+rx_grid:                            17 points in [-32.0,32.0] mm (step of 4.000000 mm)
+rz_grid:                            801 points in [-800.0,800.0] mm (step of 2.000000 mm)
+by@(all)(axis):                     (min:-0.88347 max:+0.00000) (min:-0.66108 max:+0.00000) Tesla
+bx@(all)(axis):                     (min:-0.04683 max:+0.00010) (min:-0.03501 max:+0.00007) Tesla
+bz@(all)(axis):                     (min:-0.00063 max:+0.01050) (min:-0.00059 max:+0.00746) Tesla
