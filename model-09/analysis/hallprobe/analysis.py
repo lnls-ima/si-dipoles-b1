@@ -43,275 +43,14 @@ c2e_B1 = {
     '421.9A' : 3.144332682926829,
 }
 
-# v1 = np.array([
-# 2.8426315121951222,
-# 2.990131219512195,
-# 3.0131593524884295,  # interpolated
-# 3.137303658536585,])
-#
-# v2 = np.array([
-#     2.8495769268292683,
-#     2.9970287317073168,
-#     3.0102059268292685,
-#     3.144332682926829,])
-#
-# print(100*(v2 - v1)/v1)
-# [ 0.24433046  0.2306759  -0.09801757  0.22404667
+# -- medis dos imas, apos procura do B1 com x0=8.598 mm
+c2e_B1 = {
+    '381.7A' : 2.840677756097561,
+    '401.8A' : 2.987685682926829,
+    '403.6A' : 3.0008746829268294,
+    '421.9A' : 3.134536902439024,
+}
 
-
-def get_fmap_files_B1(magnet=None, current=None):
-    """."""
-    global _fmap_files
-
-    if _fmap_files is None:
-        _s = '_Hall_X=-32_32mm_Z=-800_800mm_Imc='
-        _fmap_files = (
-            '2018-12-07_B1-002' + _s + '381.7A_ID=799.dat',
-            '2018-12-07_B1-002' + _s + '401.8A_ID=800.dat',
-            '2018-12-07_B1-002' + _s + '403.6A_ID=801.dat',
-            '2018-12-07_B1-002' + _s + '421.9A_ID=802.dat',
-            '2018-12-15_B1-003' + _s + '381.7A_ID=981.dat',
-            '2018-12-15_B1-003' + _s + '401.8A_ID=982.dat',
-            '2018-12-15_B1-003' + _s + '403.6A_ID=983.dat',
-            '2018-12-15_B1-003' + _s + '421.9A_ID=984.dat',
-            '2018-12-17_B1-004' + _s + '381.7A_ID=1021.dat',
-            '2018-12-17_B1-004' + _s + '401.8A_ID=1022.dat',
-            '2018-12-17_B1-004' + _s + '403.6A_ID=1023.dat',
-            '2018-12-17_B1-004' + _s + '421.9A_ID=1024.dat',
-            '2018-12-13_B1-005' + _s + '381.7A_ID=912.dat',
-            '2018-12-13_B1-005' + _s + '401.8A_ID=913.dat',
-            '2018-12-13_B1-005' + _s + '403.6A_ID=914.dat',
-            '2018-12-13_B1-005' + _s + '421.9A_ID=915.dat',
-            '2018-12-15_B1-006' + _s + '381.7A_ID=970.dat',
-            '2018-12-15_B1-006' + _s + '401.8A_ID=971.dat',
-            '2018-12-15_B1-006' + _s + '403.6A_ID=972.dat',
-            '2018-12-15_B1-006' + _s + '421.9A_ID=973.dat',
-            '2018-12-10_B1-009' + _s + '381.7A_ID=827.dat',
-            '2018-12-10_B1-009' + _s + '401.8A_ID=828.dat',
-            '2018-12-10_B1-009' + _s + '403.6A_ID=829.dat',
-            '2018-12-10_B1-009' + _s + '421.9A_ID=830.dat',
-            '2018-12-07_B1-010' + _s + '381.7A_ID=794.dat',
-            '2018-12-07_B1-010' + _s + '401.8A_ID=795.dat',
-            '2018-12-07_B1-010' + _s + '403.6A_ID=796.dat',
-            '2018-12-07_B1-010' + _s + '421.9A_ID=797.dat',
-            '2018-12-05_B1-011' + _s + '381.7A_ID=756.dat',
-            '2018-12-05_B1-011' + _s + '401.8A_ID=757.dat',
-            '2018-12-05_B1-011' + _s + '403.6A_ID=758.dat',
-            '2018-12-05_B1-011' + _s + '421.9A_ID=759.dat',
-            '2018-12-17_B1-012' + _s + '381.7A_ID=1007.dat',
-            '2018-12-17_B1-012' + _s + '401.8A_ID=1008.dat',
-            '2018-12-17_B1-012' + _s + '403.6A_ID=1009.dat',
-            '2018-12-17_B1-012' + _s + '421.9A_ID=1010.dat',
-            '2018-12-10_B1-013' + _s + '381.7A_ID=840.dat',
-            '2018-12-10_B1-013' + _s + '401.8A_ID=841.dat',
-            '2018-12-10_B1-013' + _s + '403.6A_ID=842.dat',
-            '2018-12-10_B1-013' + _s + '421.9A_ID=843.dat',
-            '2018-12-08_B1-014' + _s + '381.7A_ID=815.dat',
-            '2018-12-08_B1-014' + _s + '401.8A_ID=816.dat',
-            '2018-12-08_B1-014' + _s + '403.6A_ID=817.dat',
-            '2018-12-08_B1-014' + _s + '421.9A_ID=818.dat',
-            '2018-12-16_B1-015' + _s + '381.7A_ID=1001.dat',
-            '2018-12-16_B1-015' + _s + '401.8A_ID=1002.dat',
-            '2018-12-16_B1-015' + _s + '403.6A_ID=1003.dat',
-            '2018-12-16_B1-015' + _s + '421.9A_ID=1004.dat',
-            '2018-12-11_B1-016' + _s + '381.7A_ID=856.dat',
-            '2018-12-11_B1-016' + _s + '401.8A_ID=857.dat',
-            '2018-12-11_B1-016' + _s + '403.6A_ID=858.dat',
-            '2018-12-11_B1-016' + _s + '421.9A_ID=859.dat',
-            '2018-12-03_B1-017' + _s + '381.7A_ID=712.dat',
-            '2018-12-03_B1-017' + _s + '401.8A_ID=713.dat',
-            '2018-12-03_B1-017' + _s + '403.6A_ID=714.dat',
-            '2018-12-03_B1-017' + _s + '421.9A_ID=715.dat',
-            '2018-12-15_B1-018' + _s + '381.7A_ID=963.dat',
-            '2018-12-15_B1-018' + _s + '401.8A_ID=964.dat',
-            '2018-12-15_B1-018' + _s + '403.6A_ID=965.dat',
-            '2018-12-15_B1-018' + _s + '421.9A_ID=966.dat',
-            '2018-12-10_B1-019' + _s + '381.7A_ID=822.dat',
-            '2018-12-10_B1-019' + _s + '401.8A_ID=823.dat',
-            '2018-12-10_B1-019' + _s + '403.6A_ID=824.dat',
-            '2018-12-10_B1-019' + _s + '421.9A_ID=825.dat',
-            '2018-12-14_B1-020' + _s + '381.7A_ID=947.dat',
-            '2018-12-14_B1-020' + _s + '401.8A_ID=948.dat',
-            '2018-12-14_B1-020' + _s + '403.6A_ID=949.dat',
-            '2018-12-14_B1-020' + _s + '421.9A_ID=950.dat',
-            '2018-12-12_B1-021' + _s + '381.7A_ID=899.dat',
-            '2018-12-12_B1-021' + _s + '401.8A_ID=900.dat',
-            '2018-12-12_B1-021' + _s + '403.6A_ID=901.dat',
-            '2018-12-12_B1-021' + _s + '421.9A_ID=902.dat',
-            '2018-12-04_B1-022' + _s + '381.7A_ID=720.dat',
-            '2018-12-04_B1-022' + _s + '401.8A_ID=721.dat',
-            '2018-12-04_B1-022' + _s + '403.6A_ID=722.dat',
-            '2018-12-04_B1-022' + _s + '421.9A_ID=723.dat',
-            '2018-12-12_B1-023' + _s + '381.7A_ID=890.dat',
-            '2018-12-12_B1-023' + _s + '401.8A_ID=891.dat',
-            '2018-12-12_B1-023' + _s + '403.6A_ID=892.dat',
-            '2018-12-12_B1-023' + _s + '421.9A_ID=893.dat',
-            '2018-12-16_B1-024' + _s + '381.7A_ID=988.dat',
-            '2018-12-16_B1-024' + _s + '401.8A_ID=989.dat',
-            '2018-12-16_B1-024' + _s + '403.6A_ID=990.dat',
-            '2018-12-16_B1-024' + _s + '421.9A_ID=991.dat',
-            '2018-12-15_B1-025' + _s + '381.7A_ID=958.dat',
-            '2018-12-15_B1-025' + _s + '401.8A_ID=959.dat',
-            '2018-12-15_B1-025' + _s + '403.6A_ID=960.dat',
-            '2018-12-15_B1-025' + _s + '421.9A_ID=961.dat',
-            '2018-12-05_B1-026' + _s + '381.7A_ID=747.dat',
-            '2018-12-05_B1-026' + _s + '401.8A_ID=748.dat',
-            '2018-12-05_B1-026' + _s + '403.6A_ID=749.dat',
-            '2018-12-05_B1-026' + _s + '421.9A_ID=750.dat',
-            '2018-12-15_B1-027' + _s + '381.7A_ID=976.dat',
-            '2018-12-15_B1-027' + _s + '401.8A_ID=977.dat',
-            '2018-12-15_B1-027' + _s + '403.6A_ID=978.dat',
-            '2018-12-15_B1-027' + _s + '421.9A_ID=979.dat',
-            '2018-12-13_B1-028' + _s + '381.7A_ID=922.dat',
-            '2018-12-13_B1-028' + _s + '401.8A_ID=923.dat',
-            '2018-12-13_B1-028' + _s + '403.6A_ID=924.dat',
-            '2018-12-13_B1-028' + _s + '421.9A_ID=925.dat',
-            '2018-12-16_B1-029' + _s + '381.7A_ID=996.dat',
-            '2018-12-16_B1-029' + _s + '401.8A_ID=997.dat',
-            '2018-12-16_B1-029' + _s + '403.6A_ID=998.dat',
-            '2018-12-16_B1-029' + _s + '421.9A_ID=999.dat',
-            '2018-12-10_B1-030' + _s + '381.7A_ID=833.dat',
-            '2018-12-10_B1-030' + _s + '401.8A_ID=834.dat',
-            '2018-12-10_B1-030' + _s + '403.6A_ID=835.dat',
-            '2018-12-10_B1-030' + _s + '421.9A_ID=836.dat',
-            '2018-12-11_B1-031' + _s + '381.7A_ID=848.dat',
-            '2018-12-11_B1-031' + _s + '401.8A_ID=849.dat',
-            '2018-12-11_B1-031' + _s + '403.6A_ID=850.dat',
-            '2018-12-11_B1-031' + _s + '421.9A_ID=851.dat',
-            '2018-12-06_B1-032' + _s + '381.7A_ID=783.dat',
-            '2018-12-06_B1-032' + _s + '401.8A_ID=784.dat',
-            '2018-12-06_B1-032' + _s + '403.6A_ID=785.dat',
-            '2018-12-06_B1-032' + _s + '421.9A_ID=786.dat',
-            '2018-12-17_B1-033' + _s + '381.7A_ID=1016.dat',
-            '2018-12-17_B1-033' + _s + '401.8A_ID=1017.dat',
-            '2018-12-17_B1-033' + _s + '403.6A_ID=1018.dat',
-            '2018-12-17_B1-033' + _s + '421.9A_ID=1019.dat',
-            '2018-12-07_B1-034' + _s + '381.7A_ID=804.dat',
-            '2018-12-07_B1-034' + _s + '401.8A_ID=805.dat',
-            '2018-12-07_B1-034' + _s + '403.6A_ID=806.dat',
-            '2018-12-07_B1-034' + _s + '421.9A_ID=807.dat',
-            '2018-12-13_B1-035' + _s + '381.7A_ID=930.dat',
-            '2018-12-13_B1-035' + _s + '401.8A_ID=931.dat',
-            '2018-12-13_B1-035' + _s + '403.6A_ID=932.dat',
-            '2018-12-13_B1-035' + _s + '421.9A_ID=933.dat',
-            '2018-12-13_B1-036' + _s + '381.7A_ID=917.dat',
-            '2018-12-13_B1-036' + _s + '401.8A_ID=918.dat',
-            '2018-12-13_B1-036' + _s + '403.6A_ID=919.dat',
-            '2018-12-13_B1-036' + _s + '421.9A_ID=920.dat',
-            '2018-12-12_B1-037' + _s + '381.7A_ID=883.dat',
-            '2018-12-12_B1-037' + _s + '401.8A_ID=884.dat',
-            '2018-12-12_B1-037' + _s + '403.6A_ID=885.dat',
-            '2018-12-12_B1-037' + _s + '421.9A_ID=886.dat',
-            '2018-12-08_B1-038' + _s + '381.7A_ID=809.dat',
-            '2018-12-08_B1-038' + _s + '401.8A_ID=810.dat',
-            '2018-12-08_B1-038' + _s + '403.6A_ID=811.dat',
-            '2018-12-08_B1-038' + _s + '421.9A_ID=812.dat',
-            '2018-12-06_B1-039' + _s + '381.7A_ID=776.dat',
-            '2018-12-06_B1-039' + _s + '401.8A_ID=777.dat',
-            '2018-12-06_B1-039' + _s + '403.6A_ID=778.dat',
-            '2018-12-06_B1-039' + _s + '421.9A_ID=779.dat',
-            '2018-12-05_B1-040' + _s + '381.7A_ID=767.dat',
-            '2018-12-05_B1-040' + _s + '401.8A_ID=768.dat',
-            '2018-12-05_B1-040' + _s + '403.6A_ID=769.dat',
-            '2018-12-05_B1-040' + _s + '421.9A_ID=770.dat',
-            '2018-12-12_B1-041' + _s + '381.7A_ID=905.dat',
-            '2018-12-12_B1-041' + _s + '401.8A_ID=906.dat',
-            '2018-12-12_B1-041' + _s + '403.6A_ID=907.dat',
-            '2018-12-12_B1-041' + _s + '421.9A_ID=908.dat',
-            '2018-12-05_B1-042' + _s + '381.7A_ID=741.dat',
-            '2018-12-05_B1-042' + _s + '401.8A_ID=742.dat',
-            '2018-12-05_B1-042' + _s + '403.6A_ID=743.dat',
-            '2018-12-05_B1-042' + _s + '421.9A_ID=744.dat',
-            '2018-12-14_B1-043' + _s + '381.7A_ID=939.dat',
-            '2018-12-14_B1-043' + _s + '401.8A_ID=940.dat',
-            '2018-12-14_B1-043' + _s + '403.6A_ID=941.dat',
-            '2018-12-14_B1-043' + _s + '421.9A_ID=942.dat',
-            '2018-12-04_B1-046' + _s + '381.7A_ID=735.dat',
-            '2018-12-04_B1-046' + _s + '401.8A_ID=736.dat',
-            '2018-12-04_B1-046' + _s + '403.6A_ID=737.dat',
-            '2018-12-04_B1-046' + _s + '421.9A_ID=738.dat'
-            )
-
-
-    if magnet is None and current is None:
-        return _fmap_files
-
-    files = []
-    for f in _fmap_files:
-        if magnet is None or magnet in f:
-            if current is None or current in f:
-                files.append(f)
-    return tuple(files)
-
-
-def get_magnets_B1():
-    """."""
-    fnames = get_fmap_files_B1()
-    magnets = []
-    for f in fnames:
-        magnet = f[11:11+6]
-        if magnet not in magnets:
-            magnets.append(magnet)
-    return sorted(magnets)
-
-
-def get_currents_B1():
-    """."""
-    fnames = get_fmap_files_B1()
-    currents = []
-    for f in fnames:
-        current = f[51:51+6]
-        if current not in currents:
-            currents.append(current)
-    return sorted(currents)
-
-
-def search_for_deflection_angle_B1():
-    """."""
-    init_energies = [2.8426315121951222 , 2.990131219512195, 3.0131593524884295, 3.137303658536585]
-    magnets = get_magnets_B1()
-    currents = get_currents_B1()
-
-    fstr = 'magnet:{}, current:{} => nr_iter:{:02d}, energy:{:8.6f} GeV'
-    for i in range(len(currents)):
-        curr = currents[i]
-        for magnet in magnets:
-            files = get_fmap_files_B1(magnet, curr)
-            fa = hall.DoubleFMapAnalysis(magnet=magnet, fmap_fname=files[0])
-            fa.traj_init_rx = 8.285 + 0.080
-            fa.energy = init_energies[i]
-            n = fa.search_energy(False)
-            print(fstr.format(magnet, curr, n, fa.energy))
-
-
-def load_search_deflection_angle_file(fname=None):
-    """."""
-    if fname is None:
-        fname = 'search-energies.txt'
-    with open(fname) as fp:
-        text = fp.readlines()
-    data = dict()
-    for line in text:
-        words = line.split(' ')
-        magnet = words[0].split(':')[1].replace(',','')
-        current = words[1].split(':')[1]
-        energy = float(words[4].split(':')[1].split(' ')[0])
-        if current not in data:
-            data[current] = {magnet: energy}
-        elif magnet not in data[current]:
-            data[current][magnet] = energy
-        else:
-            raise ValueError()
-
-    # --- average energy ---
-    for current in data:
-        avg = np.mean(np.array([data[current][m] for m in data[current]]))
-        print('{} : {}'.format(current, avg))
-
-    currents = tuple(data.keys())
-    magnets = tuple(data[currents[0]].keys())
-    energies = tuple(tuple(data[c][m] for m in magnets) for c in currents)
-    return currents, magnets, energies
 
 
 def load_search_reference_points_file():
@@ -370,65 +109,6 @@ def load_search_reference_points_file_relaxed():
             magnet = words[0].replace(',', '').split(':')[1]
 
             print(magnet, current, energy, x0, px)
-
-
-def plot_results_search_deflection_angle_B1():
-    """."""
-    currents, magnets, energies = load_search_deflection_angle_file()
-    fst = 'current:{}  energy_avg:{:8.6f} Gev  energy_std:{:5.3f} %'
-    for i in range(len(energies)):
-        em = np.mean(energies[i])
-        es = np.std(energies[i])
-        ev = 100*(energies[i] - em)/em
-        plt.plot(ev, 'o', label=currents[i])
-        print(fst.format(currents[i], em, 100*es/em))
-    plt.plot([0, len(ev)-1], [+0.05, ]*2, '--k', label='spec')
-    plt.plot([0, len(ev)-1], [-0.05, ]*2, '--k',)
-    plt.xlabel('Magnet Index')
-    plt.ylabel('Nominal deflection energy spread [%]')
-    plt.grid()
-    plt.legend()
-    plt.show()
-
-
-def generate_inputs_B1():
-    """."""
-    # c2e_B1 = {  # media dos imas, apos procura...
-    #     '381.7A': 2.852039,
-    #     '401.8A': 3.000021,
-    #     '421.9A': 3.147681,
-    # }
-
-    # c2e2_B1 = {  # media dos imas, apos procura com x0=8.165mm
-    #     '381.7A': 2.8526211463414635,
-    #     '401.8A': 3.0002371951219517,
-    #     '403.6A': 3.0134503658536587,
-    #     '421.9A': 3.1477130975609757,
-    # }
-    c2e2_B1 = c2e_B1
-
-    path_base = (
-        '/home/fac_files/lnls-ima/si-dipoles-b1/model-09/analysis/'
-        'hallprobe/production/x0-8p365mm/')
-    magnets = get_magnets_B1()
-    currents = get_currents_B1()
-    for magnet in magnets:
-        print('creating input files for magnet {}'.format(magnet))
-        for curr in currents:
-            path = path_base + magnet + '/' + curr.replace('.', 'p') + '/'
-            fname = get_fmap_files_B1(magnet, curr)[0]
-            f = hall.DoubleFMapAnalysis(magnet=magnet, fmap_fname=fname)
-            default_s_step = f.get_defaults()['traj_rk_s_step']
-            f.energy = c2e2_B1[curr]
-            f.traj_init_rx = 8.365
-            # positive
-            f.traj_rk_s_step = +abs(default_s_step)
-            f.create_input(
-                path=path, force=True, path_subdir='z-positive/')
-            # negative
-            f.traj_rk_s_step = -abs(default_s_step)
-            f.create_input(
-                path=path, force=True, path_subdir='z-negative/')
 
 
 def seach_for_reference_point_B1():
@@ -691,244 +371,20 @@ def generate_inputs_reference_point_B1():
         print(path, f)
 
 
-def load_analysis_result(folder, plots=None):
-    """."""
-    path_base = (
-        '/home/fac_files/lnls-ima/si-dipoles-b1/model-09/analysis/'
-        'hallprobe/production/' + folder)
-    magnets = get_magnets_B1()
-    currents = get_currents_B1()
-    data = {
-        'angle': dict(),
-        'angleP': dict(),
-        'angleN': dict(),
-        'dangle': dict(),
-        'energy': dict(),
-        'rx0': dict(),
-        'refrxP': dict(),
-        'refrxN': dict(),
-        'dip_normal': dict(),
-        'dip_skew': dict(),
-        'quad_normal': dict(),
-        'quad_skew': dict(),
-        'sext_normal': dict(),
-        'sext_skew': dict(),
-        'dip_normalP': dict(),
-        'dip_skewP': dict(),
-        'quad_normalP': dict(),
-        'quad_skewP': dict(),
-        'sext_normalP': dict(),
-        'sext_skewP': dict(),
-        'dip_normalN': dict(),
-        'dip_skewN': dict(),
-        'quad_normalN': dict(),
-        'quad_skewN': dict(),
-        'sext_normalN': dict(),
-        'sext_skewN': dict(),
-        }
-    convd = {
-        'initial rx position of trajectory': 'rx0',
-        'beam_energy': 'energy'}
-    for current in currents:
-        for p in data:
-            data[p][current] = []
-        for magnet in magnets:
-            path = path_base + magnet + '/' + current.replace('.', 'p') + '/'
-            fname = get_fmap_files_B1(magnet, current)[0]
-            f = hall.DoubleFMapAnalysis(magnet=magnet, fmap_fname=fname)
-            dataP = f.load_output_trajectory(path, 'z-positive/')
-            dataN = f.load_output_trajectory(path, 'z-negative/')
-
-            angle = \
-                dataP['horizontal_deflection_angle'] - \
-                dataN['horizontal_deflection_angle']
-            data['angle'][current].append(angle)
-            data['angleP'][current].append(
-                dataP['horizontal_deflection_angle'])
-            data['angleN'][current].append(
-                dataN['horizontal_deflection_angle'])
-            v = dataP['rx position of reference'] - f.model_nominal_refrx
-            data['refrxP'][current].append(v)
-            v = dataN['rx position of reference'] - f.model_nominal_refrx
-            data['refrxN'][current].append(v)
-
-            for k in convd:
-                dP = dataP[k]
-                dN = dataN[k]
-            if dP == dN:
-                data[convd[k]][current].append(dP)
-            else:
-                raise ValueError('{} != {}'.format(dP, dN))
-
-            mpoles_normalP, mpoles_skewP, harms = \
-                f.load_output_multipoles(path, 'z-positive/')
-            mpoles_normalN, mpoles_skewN, harms = \
-                f.load_output_multipoles(path, 'z-negative/')
-            mpoles_normal = np.array(mpoles_normalP) + np.array(mpoles_normalN)
-            mpoles_skew = np.array(mpoles_skewP) + np.array(mpoles_skewN)
-            data['dip_normal'][current].append(mpoles_normal[0])
-            data['dip_skew'][current].append(mpoles_skew[0])
-            data['quad_normal'][current].append(mpoles_normal[1])
-            data['quad_skew'][current].append(mpoles_skew[1])
-            data['sext_normal'][current].append(mpoles_normal[2])
-            data['sext_skew'][current].append(mpoles_skew[2])
-
-            data['dip_normalP'][current].append(mpoles_normalP[0])
-            data['dip_skewP'][current].append(mpoles_skewP[0])
-            data['quad_normalP'][current].append(mpoles_normalP[1])
-            data['quad_skewP'][current].append(mpoles_skewP[1])
-            data['sext_normalP'][current].append(mpoles_normalP[2])
-            data['sext_skewP'][current].append(mpoles_skewP[2])
-
-            data['dip_normalN'][current].append(mpoles_normalN[0])
-            data['dip_skewN'][current].append(mpoles_skewN[0])
-            data['quad_normalN'][current].append(mpoles_normalN[1])
-            data['quad_skewN'][current].append(mpoles_skewN[1])
-            data['sext_normalN'][current].append(mpoles_normalN[2])
-            data['sext_skewN'][current].append(mpoles_skewN[2])
-
-    for current in currents:
-        a = np.array(data['angle'][current])
-        am = np.mean(a)
-        # dm = 100*(a - am)/am
-        dm = 100*(a - (-f.model_nominal_angle))/((-f.model_nominal_angle))
-        data['dangle'][current] = dm
-
-    if not plots:
-        return magnets, currents, data
-
-    # --- energy ---
-    if not plots or 'energy' in plots:
-        for current in currents:
-            print(current, np.mean(data['energy'][current]))
-            plt.plot(data['energy'][current], 'o', label=current)
-        plt.legend()
-        plt.xlabel('Magnet index')
-        plt.ylabel('Energy [GeV]')
-        plt.show()
-
-    # --- angle ---
-    if not plots or 'angle' in plots:
-        for current in currents:
-            plt.plot(data['angle'][current], 'o', label=current)
-            n = len(data['angle'][current])
-        plt.plot([0, n-1], [-f.model_nominal_angle, ]*2, '--k', label='spec')
-        plt.legend()
-        plt.xlabel('Magnet index')
-        plt.ylabel('Angle [deg]')
-        plt.show()
-
-    # --- angle error ---
-    if not plots or 'dangle' in plots:
-        for current in currents:
-            plt.plot(data['dangle'][current], 'o', label=current)
-            n = len(data['dangle'][current])
-        plt.plot([0, n-1], [-0.05, -0.05], '--k', label='spec')
-        plt.plot([0, n-1], [+0.05, +0.05], '--k')
-        plt.legend()
-        plt.xlabel('Magnet index')
-        plt.ylabel('Angle Deviation from Average for each Current[%]')
-        plt.show()
-
-    # --- quadrupolar error ---
-    if not plots or 'quad' in plots:
-        nominal_KL = hall.defaults['si-dipoles-b1']['model_nominal_KL']
-        nominal_GL = dict()
-        for current in currents:
-            energy = np.mean(data['energy'][current])
-            brho, *_ = mp.beam_optics.beam_rigidity(energy=energy)
-            nominal_GL = -nominal_KL * brho
-            GL = data['quad_normal'][current]
-            # print(energy, brho, nominal_KL, nominal_GL, GL)
-            v = 100*(GL - nominal_GL)/nominal_GL
-            print('current:{}, avg_quad_error:{:f}'.format(current,
-                                                           np.mean(v)))
-            plt.plot(v, label=current)
-            n = len(data['quad_normal'][current])
-        plt.plot([0, n-1], [-0.1, -0.1], '--k', label='spec')
-        plt.plot([0, n-1], [+0.1, +0.1], '--k')
-        plt.xlabel('Magnet index')
-        plt.ylabel('Quadrupolar Error [%]')
-        plt.grid()
-        plt.legend()
-        plt.show()
-
-    # --- reference point rx variation ---
-    if not plots or 'refrx' in plots:
-        s1 = ['ob', 'or', 'og', 'oy']
-        s2 = ['sb', 'sr', 'sg', 'sy']
-        for i in range(len(currents)):
-            v = 1e3*np.array(data['refrxP'][currents[i]])
-            plt.plot(v, s1[i], label=currents[i] + ' P')
-            v = 1e3*np.array(data['refrxN'][currents[i]])
-            plt.plot(v, s2[i], label=currents[i] + ' N')
-        plt.legend(fontsize=20)
-        plt.grid()
-        plt.xlabel('Magnet Index', fontsize=20)
-        plt.ylabel('Diff. between refpoint rx to nominal [um]', fontsize=20)
-        plt.show()
-
-
-def save_readme_files():
-    """."""
-    header = (
-        'Sirius B1 Dipoles Integrated Principal Multipoles',
-        '=================================================',
-        '',
-        'As calculated in SIDE-half Runge-Kutta trajectory,',
-        ('defined by measured fieldmap with magnet excitated with current '
-         'of CURRENT,'),
-        'corresponding to nominal particle energy of ENERGY GeV.',
-        '',
-        ('  Dipole   |  Angle [°]   |  Dint [T.m]  |   Gint [T]   |  Sint '
-         '[T/m]  |'),
-        ('           |              |              |              '
-         '|              |'))
-    sfmt = ('|{0:^10s}| {1:^+12.5f} | {2:^+12.5f} | {3:^+12.5f} '
-            '| {4:^+12.5f} |\n')
-
-    magnets, currents, data = load_analysis_result('x0-8p365mm/', False)
-
-    for current in currents:
-        for side in ('Zpositive', 'Znegative'):
-            with open('README-' + current + '-' + side + '.md', 'w') as fp:
-                # header
-                for line in header:
-                    line = line.replace('CURRENT', current)
-                    line = line.replace('SIDE', side)
-                    line = line.replace('ENERGY', str(c2e_B1[current]))
-                    fp.write(line + '\n')
-                # data
-                for i in range(len(magnets)):
-                    magnet = magnets[i]
-                    angle = data['angleP'][current][i] if \
-                        side == 'Zpositive' else data['angleN'][current][i]
-                    dip = data['dip_normalP'][current][i] if \
-                        side == 'Zpositive' else \
-                        data['dip_normalN'][current][i]
-                    quad = data['quad_normalP'][current][i] if \
-                        side == 'Zpositive' else \
-                        data['quad_normalN'][current][i]
-                    sext = data['sext_normalP'][current][i] if \
-                        side == 'Zpositive' else \
-                        data['sext_normalN'][current][i]
-                    fp.write(sfmt.format(magnet, angle, dip, quad, sext))
-
-
 def run():
     """."""
-    # search_for_deflection_angle_B1()
-    # load_search_deflection_angle_file('search-energies-shifted-x0.txt')
-    # plot_results_search_deflection_angle_B1()
-    # generate_inputs_B1()
+    # hall.search_for_deflection_angle('B1')
+    # hall.plot_results_search_deflection_angle('search-energies-shifted-x0.txt')
+    # hall.generate_inputs(c2e_B1, '8p598', dipole_type='B1')
+    # hall.load_analysis_result('x0-8p598mm/', 'B1', ('dangle', 'refrx', 'quad'))
+    hall.save_readme_files(c2e_B1, 'x0-8p598mm/', 'B1')
+
     # seach_for_reference_point_B1()
     # load_search_reference_points_file()
     # plot_results_search_reference_points_B1()
     # generate_inputs_reference_point_B1()
-    # load_analysis_result('x0-8p365mm/', ('dangle', 'refrx', 'quad'))
     # load_search_reference_points_file_relaxed()
     # plot_results_search_reference_points_relaxed_B1()
-    save_readme_files()
 
     # currents, magnets, energies = \
     #     load_search_deflection_angle_file(fname='search-energies-shifted-x0.txt')
@@ -954,3 +410,25 @@ def run():
     # print()
 
 run()
+# v = [
+#  [0.0020 ,  +0.00644 ,  +0.0000e+00 ,  -7.5340e-01 ,  -2.9735e-01 ,  +7.7615e-01 ,  -3.7805e+01 ,  +7.7650e+03 ,  -5.4386e+04 , ],
+#  [0.0030 ,  +0.00966 ,  +0.0000e+00 ,  -7.5575e-01 ,  -2.4508e-01 ,  +4.5129e-01 ,  -3.8924e+01 ,  +6.5029e+03 ,  -1.5664e+04 , ],
+#  [0.0050 ,  +0.01614 ,  +0.0000e+00 ,  -7.6242e-01 ,  -1.1701e-01 ,  -2.3400e-01 ,  -4.5079e+01 ,  +5.9481e+03 ,  +7.0597e+04 , ],
+#  [0.0050 ,  +0.01620 ,  +0.0000e+00 ,  -7.7003e-01 ,  -1.5001e-02 ,  +5.4571e-02 ,  -3.7010e+01 ,  +5.2731e+03 ,  +7.1373e+04 , ],
+#  [0.0050 ,  +0.01623 ,  +0.0000e+00 ,  -7.7387e-01 ,  +3.8018e-03 ,  +7.4966e-01 ,  -2.3986e+01 ,  +4.2452e+03 ,  +1.1962e+05 , ],
+#  [0.0100 ,  +0.03250 ,  +0.0000e+00 ,  -7.7496e-01 ,  -3.1229e-03 ,  +9.7935e-01 ,  +2.3856e+00 ,  +3.5272e+03 ,  +1.2499e+05 , ],
+#  [0.0400 ,  +0.12976 ,  +0.0000e+00 ,  -7.7402e-01 ,  +1.9461e-02 ,  +1.1120e+00 ,  +2.3872e+01 ,  +3.1803e+03 ,  +1.2777e+05 , ],
+#  [0.1500 ,  +0.48326 ,  +0.0000e+00 ,  -7.7343e-01 ,  +5.4918e-02 ,  +1.9857e+00 ,  +4.0989e+01 ,  +3.4137e+03 ,  +1.4539e+05 , ],
+#  [0.1000 ,  +0.32210 ,  +0.0000e+00 ,  -7.7298e-01 ,  +7.5842e-02 ,  +2.6791e+00 ,  +5.4030e+01 ,  +3.4599e+03 ,  +1.3914e+05 , ],
+#  [0.0500 ,  +0.16186 ,  +0.0000e+00 ,  -7.7450e-01 ,  +7.8398e-03 ,  +1.7151e+00 ,  +4.9396e+01 ,  +3.6838e+03 ,  +1.3839e+05 , ],
+#  [0.0340 ,  +0.10511 ,  +0.0000e+00 ,  -7.7652e-01 ,  -1.5867e-01 ,  +5.6619e+00 ,  +3.2082e+01 ,  +7.9171e+03 ,  -1.3675e+04 , ],
+#  [0.0160 ,  +0.03328 ,  +0.0000e+00 ,  -4.2796e-01 ,  -2.2317e+00 ,  +1.6032e+01 ,  -1.8676e+02 ,  +1.7391e+04 ,  -3.2940e+05 , ],
+#  [0.0400 ,  +0.03267 ,  +0.0000e+00 ,  -8.4794e-02 ,  -1.9642e+00 ,  +7.5802e+00 ,  -5.1702e+01 ,  +5.4621e+03 ,  +5.5585e+03 , ],
+#  [0.0400 ,  +0.00789 ,  +0.0000e+00 ,  -9.0989e-03 ,  -4.2785e-01 ,  +1.5586e+00 ,  +2.0396e+01 ,  +3.4934e+01 ,  +1.2201e+03 , ],
+#  [0.0500 ,  +0.00455 ,  -3.8076e-06 ,  -9.9754e-04 ,  -1.0224e-01 ,  +2.0697e-01 ,  +4.4900e+00 ,  -1.5401e+01 ,  -6.3421e+02 ,],
+# ]
+#
+# L = np.array([l[0] for l in v])
+# K = np.array([l[3] for l in v])
+# KL = K*L
+# print(sum(KL))
