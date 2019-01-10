@@ -403,8 +403,8 @@ def run():
     # hall.search_for_deflection_angle('B1')
     # hall.plot_results_search_deflection_angle('search-energies-shifted-x0.txt')
     # hall.generate_inputs(c2e_B1, '8p598', dipole_type='B1')
-    hall.load_analysis_result('x0-8p598mm/', 'B1', ('dangle', 'refrx', 'quad'))
-    # hall.save_readme_files(c2e_B1, 'x0-8p598mm/', 'B1')
+    # hall.load_analysis_result('x0-8p598mm/', 'B1', ('dangle', 'refrx', 'quad'))
+    hall.save_readme_files(c2e_B1, 'x0-8p598mm/', 'B1')
 
     # seach_for_reference_point_B1()
     # load_search_reference_points_file()
