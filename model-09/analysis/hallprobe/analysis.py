@@ -44,7 +44,7 @@ c2e_B1 = {
     '421.9A' : 3.144332682926829,
 }
 
-# -- medis dos imas, apos procura do B1 com x0=8.598 mm
+# -- media dos imas, apos procura do B1 com x0=8.598 mm
 c2e_B1 = {
     '381.7A' : 2.840677756097561,
     '401.8A' : 2.987685682926829,
@@ -401,6 +401,7 @@ def generate_inputs_reference_point_B1():
 def run():
     """."""
     # hall.search_for_deflection_angle('B1')
+    # hall.search_for_deflection_angle_vary_x0(c2e_B2, 'B1')
     # hall.plot_results_search_deflection_angle('search-energies-shifted-x0.txt')
     # hall.generate_inputs(c2e_B1, '8p598', dipole_type='B1')
     # hall.load_analysis_result('x0-8p598mm/', 'B1', ('dangle', 'refrx', 'quad'))
