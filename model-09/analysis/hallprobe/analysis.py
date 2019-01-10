@@ -21,7 +21,8 @@ c2e = {
 c2e_B2 = {
     '381.7A': 2.8426315121951222,
     '401.8A': 2.990131219512195,
-    '403.6A': 3.0131593524884295,  # interpolated
+    # '403.6A': 3.0131593524884295,  # interpolated
+    '403.6A': 3.0033241824405446, # poly fitted order=2
     '421.9A': 3.137303658536585,
 }
 
@@ -50,6 +51,32 @@ c2e_B1 = {
     '403.6A' : 3.0008746829268294,
     '421.9A' : 3.134536902439024,
 }
+
+
+# vB2 = np.array([
+#     2.8426315121951222,
+#     2.990131219512195,
+#     3.0033241824405446,  # interpolated
+#     3.137303658536585,
+# ])
+#
+# vB1 = np.array([
+#     2.840677756097561,
+#     2.987685682926829,
+#     3.0008746829268294,
+#     3.134536902439024,
+# ])
+#
+# diff = [-0.06873054 -0.08178693 -0.08155961 -0.08818898]
+#
+# print(100*(vB1 - vB2)/vB2)
+#
+# x = [381.7, 401.8, 421.9]
+# y = vB2[[0,1,3]]
+# z = np.polyfit(x, y, 2)
+# p = np.poly1d(z)
+# print(p(403.6))
+
 
 
 
@@ -376,8 +403,8 @@ def run():
     # hall.search_for_deflection_angle('B1')
     # hall.plot_results_search_deflection_angle('search-energies-shifted-x0.txt')
     # hall.generate_inputs(c2e_B1, '8p598', dipole_type='B1')
-    # hall.load_analysis_result('x0-8p598mm/', 'B1', ('dangle', 'refrx', 'quad'))
-    hall.save_readme_files(c2e_B1, 'x0-8p598mm/', 'B1')
+    hall.load_analysis_result('x0-8p598mm/', 'B1', ('dangle', 'refrx', 'quad'))
+    # hall.save_readme_files(c2e_B1, 'x0-8p598mm/', 'B1')
 
     # seach_for_reference_point_B1()
     # load_search_reference_points_file()
