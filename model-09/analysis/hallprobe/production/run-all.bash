@@ -5,7 +5,7 @@ cmd=$2
 current=$3
 side=$4
 
-folder=x0-8p539mm
+folder=x0-8p527mm
 
 function f1 {
   cmd=$1

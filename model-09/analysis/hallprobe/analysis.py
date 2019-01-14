@@ -26,6 +26,13 @@ c2e_B2 = {
     '421.9A': 3.137303658536585,
 }
 
+# media dos imas, apos procura do B2 com x0=8.153mm
+c2e_B2 = {
+    '381.7A' : 2.84308943902439,
+    '401.8A' : 2.990614,
+    '403.6A' : 3.003809843074398, # poly fitted order=2
+    '421.9A' : 3.137824707317073,
+}
 
 # --- media dos imas, apos procura do B1 com x0=8.285mm
 c2e_B1 = {
@@ -78,6 +85,24 @@ c2e_B1 = {
 # print(p(403.6))
 
 
+
+def fit_energy(c2e):
+    fmts = "'{}' : {}"
+    ic, c, e = [], [], []
+    for curr in c2e:
+        if c2e[curr]:
+            v = c2e[curr]
+            c.append(float(curr.replace('A', '')))
+            e.append(v)
+            print(fmts.format(str(curr), v))
+        else:
+            ic.append(curr)
+    z = np.polyfit(c, e, len(c)-1)
+    p = np.poly1d(z)
+    for curr in ic:
+        c = float(curr.replace('A', ''))
+        v = p(c)
+        print(fmts.format(str(curr), v))
 
 
 def load_search_reference_points_file():
@@ -397,13 +422,16 @@ def generate_inputs_reference_point_B1():
         # default_s_step = f.get_defaults()['traj_rk_s_step']
         print(path, f)
 
-
 def run():
     """."""
+    # fit_energy(c2e_B2)
     # hall.search_for_deflection_angle_vary_x0(c2e_B2, 'B1')
-    # hall.generate_inputs(c2e_B2, '8p539', dipole_type='B1')
+    # hall.generate_inputs(c2e_B2, '8p527', dipole_type='B1')
+    # hall.load_analysis_result('x0-8p527mm/', 'B1', ('dangle', 'refrx', 'quad'))
+    hall.save_readme_files(c2e_B2, 'x0-8p527mm/', 'B1')
+    # hall.generate_inputs(c2e_B2, '8p546', dipole_type='B1')
+    # hall.load_analysis_result('x0-8p539mm/', 'B1', ('dangle', 'refrx', 'quad'))
     # hall.save_readme_files(c2e_B2, 'x0-8p539mm/', 'B1')
-    hall.load_analysis_result('x0-8p539mm/', 'B1', ('dangle', 'refrx', 'quad'))
 
     # hall.search_for_deflection_angle('B1')
     # hall.plot_results_search_deflection_angle('search-energies-shifted-x0.txt')
