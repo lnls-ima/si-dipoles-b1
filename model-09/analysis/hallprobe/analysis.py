@@ -2,6 +2,7 @@
 """Run analysis."""
 
 
+import math as _math
 import numpy as np
 import matplotlib.pyplot as plt
 from fieldmaptrack import hallprobe as hall
@@ -422,13 +423,40 @@ def generate_inputs_reference_point_B1():
         # default_s_step = f.get_defaults()['traj_rk_s_step']
         print(path, f)
 
+
 def run():
     """."""
     # fit_energy(c2e_B2)
     # hall.search_for_deflection_angle_vary_x0(c2e_B2, 'B1')
     # hall.generate_inputs(c2e_B2, '8p527', dipole_type='B1')
     # hall.load_analysis_result('x0-8p527mm/', 'B1', ('dangle', 'refrx', 'quad'))
-    hall.save_readme_files(c2e_B2, 'x0-8p527mm/', 'B1')
+    # hall.save_readme_files(c2e_B2, 'x0-8p527mm/', 'B1')
+    # le, an = hall.calc_average_angles('x0-8p527mm/', 'B1')
+    # hall.plot_trajectories('x0-8p527mm/', 'B1')
+    # z_rk, x_rk, s_rk = hall.calc_average_rk_traj('x0-8p527mm/', 'B1')
+    # le, an = hall.calc_average_angles('x0-8p527mm/', 'B1')
+    # z, x, s = gen_trajectory(x_rk[0], le, an, s_rk[1]-s_rk[0], s_rk[-1])
+    # plt.plot(z_rk, x_rk)
+    # plt.plot(z, x)
+    # plt.show()
+
+    # hall.plot_reference_trajectory('B1')
+    # hall.save_reference_trajectory('B1')
+
+    # print(le)
+    # print(an)
+    # print(2*sum(an))
+
+
+
+
+    # an = [v*_math.pi/180 for v in an]
+    # le = [v*1000 for v in le]
+    # z, x, s = gen_trajectory(le, an, 0.1, 600)
+    # plt.plot(z, x)
+    # # plt.axis('equal')
+    # plt.show()
+
     # hall.generate_inputs(c2e_B2, '8p546', dipole_type='B1')
     # hall.load_analysis_result('x0-8p539mm/', 'B1', ('dangle', 'refrx', 'quad'))
     # hall.save_readme_files(c2e_B2, 'x0-8p539mm/', 'B1')
