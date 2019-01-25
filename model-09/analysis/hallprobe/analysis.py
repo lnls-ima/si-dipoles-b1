@@ -441,7 +441,8 @@ def run():
     # plt.show()
 
     # hall.plot_reference_trajectory('B1')
-    # hall.save_reference_trajectory('B1')
+    # hall.save_reference_trajectory('B1', factor=1.0, correct=False)
+    # return
 
     # print(le)
     # print(an)
@@ -449,6 +450,26 @@ def run():
 
 
 
+    d = {'381.7A':'b', '401.8A':'r', '403.6A':'y', '421.9A':'g'}
+    # plot quads
+    for current, color in d.items():
+        quad_error1, quad_error2 = hall.load_multipole_error('B1', current, idx=1)
+        plt.plot(quad_error1, color+'-', label=current + ' individual traj')
+        plt.plot(quad_error2, color+'--', label=current + ' average traj')
+    plt.xlabel('Magnet Index')
+    plt.ylabel('Quadrupole Error [%]')
+    plt.legend()
+    plt.show()
+
+    # plot dipolar
+    for current, color in d.items():
+        dip_error1, dip_error2 = hall.load_multipole_error('B1', current, idx=0)
+        plt.plot(dip_error1, color+'-', label=current + ' individual traj')
+        plt.plot(dip_error2, color+'--', label=current + ' average traj')
+    plt.xlabel('Magnet Index')
+    plt.ylabel('Dipolar Error [%]')
+    plt.legend()
+    plt.show()
 
     # an = [v*_math.pi/180 for v in an]
     # le = [v*1000 for v in le]
