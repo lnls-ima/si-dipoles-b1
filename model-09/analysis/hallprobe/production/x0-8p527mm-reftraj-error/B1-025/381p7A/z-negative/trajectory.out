@@ -1,0 +1,15 @@
+--- trajectory (rz > -0.0 mm) ---
+beam_energy:                        2.843089e+00 GeV
+horizontal_deflection_angle:        +1.3777e+00 deg.
+vertical_deflection_angle:          +0.0000e+00 deg.
+final_horizontal_angle:             +1.3777e+00 deg.
+final_vertical_angle:               +0.0000e+00 deg.
+trajectory_length:                  -800.09999999982 mm
+trajectory_nrpts:                   16003
+trajectory_s_step:                  -0.05 mm
+max_abs_bx@trajectory:              -0.027811 Tesla at (s,rx,ry,rz) = (-53.4999999999991,8.44581350398585,0.0,-53.8297053785215) mm
+max_abs_by@trajectory:              -0.536120 Tesla at (s,rx,ry,rz) = (-351.050000000046,5.04872681649795,0.0,-351.508582710713) mm
+max_abs_bz@trajectory:              +0.006025 Tesla at (s,rx,ry,rz) = (-390.700000000055,4.2190643431386,0.0,-391.199595377261) mm
+rx position of reference point:     +13.693006 mm
+initial rx position of trajectory:  +8.527000 mm
+sagitta:                            4.59867330694212 mm
