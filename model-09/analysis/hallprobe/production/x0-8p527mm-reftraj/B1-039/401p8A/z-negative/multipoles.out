@@ -1,7 +1,7 @@
 --- multipoles on reference trajectory (rz > 0) ---
-effective_length:                   437.0486575359121 mm
+effective_length:                   437.04879132300164 mm
 perpendicular_grid:                 41 points in [-10.000000,+10.000000] mm
-max_fitting_error_normal            0.038/6383.564 G/G
+max_fitting_error_normal            0.038/6383.566 G/G
 max_fitting_error_skew              339.444/339.444 G/G
 r0_for_relative_multipoles          12 mm
 main_monomial                       n = 0, skew:False
@@ -9,8 +9,8 @@ main_monomial                       n = 0, skew:False
 <multipole_order n>                    [T/m^n]      [T.m/m^n]        []       |    [T/m^n]      [T.m/m^n]        []      
 n=00:                                5.4950e-01    -2.4016e-01   +1.0000e+00  |      ---           ---           ---     
 n=01:                                7.1853e+00    +3.2224e+00   -1.6101e-01  |      ---           ---           ---     
-n=02:                                6.0416e+00    +8.3889e-01   -5.0300e-04  |      ---           ---           ---     
+n=02:                                6.0416e+00    +8.3890e-01   -5.0300e-04  |      ---           ---           ---     
 n=03:                                2.3990e+01    -3.0023e+01   +2.1602e-04  |      ---           ---           ---     
-n=04:                                2.2720e+03    +1.1455e+03   -9.8903e-05  |      ---           ---           ---     
-n=05:                                1.6088e+05    +3.0331e+03   -3.1427e-06  |      ---           ---           ---     
-n=06:                                5.7149e+06    -7.3270e+06   +9.1100e-05  |      ---           ---           ---     
+n=04:                                2.2720e+03    +1.1454e+03   -9.8901e-05  |      ---           ---           ---     
+n=05:                                1.6088e+05    +3.0336e+03   -3.1431e-06  |      ---           ---           ---     
+n=06:                                5.7149e+06    -7.3269e+06   +9.1098e-05  |      ---           ---           ---     
