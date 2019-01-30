@@ -1,16 +1,16 @@
 --- multipoles on reference trajectory (rz > 0) ---
-effective_length:                   435.84160353822676 mm
+effective_length:                   435.84870166644544 mm
 perpendicular_grid:                 41 points in [-10.000000,+10.000000] mm
-max_fitting_error_normal            0.028/4884.635 G/G
-max_fitting_error_skew              342.963/342.963 G/G
+max_fitting_error_normal            0.028/4884.647 G/G
+max_fitting_error_skew              342.964/342.964 G/G
 r0_for_relative_multipoles          12 mm
 main_monomial                       n = 0, skew:False
                                        Nn(s=0)      Integ_Nn     Nn/N0(@r0)   |    Sn(s=0)      Integ_Sn     Sn/S0(@r0)  
 <multipole_order n>                    [T/m^n]      [T.m/m^n]        []       |    [T/m^n]      [T.m/m^n]        []      
 n=00:                                5.5282e-01    -2.4094e-01   +1.0000e+00  |      ---           ---           ---     
 n=01:                                7.2550e+00    +3.2381e+00   -1.6127e-01  |      ---           ---           ---     
-n=02:                                5.4692e+00    +9.5202e-01   -5.6898e-04  |      ---           ---           ---     
-n=03:                                5.2098e+01    -1.9866e+00   +1.4248e-05  |      ---           ---           ---     
-n=04:                                1.1530e+03    +6.0002e+02   -5.1640e-05  |      ---           ---           ---     
-n=05:                                7.1791e+05    -1.7106e+05   +1.7666e-04  |      ---           ---           ---     
-n=06:                                1.7324e+06    -6.4293e+06   +7.9678e-05  |      ---           ---           ---     
+n=02:                                5.4692e+00    +9.5234e-01   -5.6916e-04  |      ---           ---           ---     
+n=03:                                5.2098e+01    -1.9896e+00   +1.4269e-05  |      ---           ---           ---     
+n=04:                                1.1530e+03    +6.0005e+02   -5.1641e-05  |      ---           ---           ---     
+n=05:                                7.1791e+05    -1.7101e+05   +1.7661e-04  |      ---           ---           ---     
+n=06:                                1.7324e+06    -6.4248e+06   +7.9621e-05  |      ---           ---           ---     

@@ -441,13 +441,16 @@ def run():
     # plt.show()
 
     # hall.plot_reference_trajectory('B1')
-    hall.save_reference_trajectory('B1', factor=1.0, correct=False)
+    # hall.save_reference_trajectory('B1', factor=1.0, correct=False)
+    # return
+
+    # hall.run_analysis_reftraj_models('B1', '381p7A')
+    # hall.run_analysis_reftraj_models('B1', '401p8A')
+    # hall.run_analysis_reftraj_models('B1', '403p6A')
+    # hall.run_analysis_reftraj_models('B1', '421p9A')
+    hall.print_average_model('B1', '403p6A')
     return
-
-    # print(le)
-    # print(an)
-    # print(2*sum(an))
-
+    return
 
 
     d = {'381.7A':'b', '401.8A':'r', '403.6A':'y', '421.9A':'g'}
@@ -516,6 +519,7 @@ def run():
     # print(e[2])
     # print(np.mean(np.array(e[2])))
     # print()
+
 
 run()
 

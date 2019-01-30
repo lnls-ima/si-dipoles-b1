@@ -48,7 +48,7 @@ beam_energy                   3.003809843074398     # [GeV]
 # reference trajectory with be calculated with RK on the given
 # fieldmap.
 
-traj_load_filename            None
+traj_load_filename "trajectory-b1-neg.in"
 
 
 # If parameter 'traj_is_reference_traj' is set to True the algorithm
