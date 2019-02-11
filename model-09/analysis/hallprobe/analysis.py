@@ -429,8 +429,8 @@ def run():
     # fit_energy(c2e_B2)
     # hall.search_for_deflection_angle_vary_x0(c2e_B2, 'B1')
     # hall.generate_inputs(c2e_B2, '8p527', dipole_type='B1')
-    # hall.load_analysis_result('x0-8p527mm/', 'B1', ('dangle', 'refrx', 'quad'))
-    # return
+    hall.load_analysis_result('x0-8p527mm/', 'B1', ('dangle', 'refrx', 'quad'))
+    return
     # hall.save_readme_files(c2e_B2, 'x0-8p527mm/', 'B1')
     # le, an = hall.calc_average_angles('x0-8p527mm/', 'B1')
     # hall.plot_trajectories('x0-8p527mm/', 'B1')
