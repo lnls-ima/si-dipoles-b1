@@ -73,4 +73,10 @@ function f4 {
   cd $folder/B1-046/$current/$side; fac-fma-analysis.py $cmd; cd ../../../../
 }
 
+function fnew {
+  cmd=$1
+  current=$2
+  side=$3
+  cd $folder/B1-022-new/$current/$side; fac-fma-analysis.py $cmd; cd ../../../../
+}
 $func $cmd $current $side
