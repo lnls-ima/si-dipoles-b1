@@ -1,0 +1,14 @@
+--- fieldmap ---
+timestamp:                          2020-09-13_07-07-09
+filename:                           2020-09-13_B1-022_Fieldmap_X=-32_32mm_Z=-1000_1000mm_Imc=394.0A_ID=2761.dat
+magnet_label:                       B1-022
+magnet_length:                      808.4 mm
+main_coil_current:                  394.021 A
+magnetic_gap:                       39.0 mm
+control_gap:                        None mm
+ry_grid:                            1 point in [0.0,0.0] mm (step of 0.000000 mm)
+rx_grid:                            65 points in [-32.0,32.0] mm (step of 1.000000 mm)
+rz_grid:                            2001 points in [-1000.0,1000.0] mm (step of 1.000000 mm)
+by@(all)(axis):                     (min:-0.84086 max:+0.00002) (min:-0.62793 max:+0.00001) Tesla
+bx@(all)(axis):                     (min:-0.00102 max:+0.00083) (min:-0.00046 max:+0.00009) Tesla
+bz@(all)(axis):                     (min:-0.00341 max:+0.00037) (min:-0.00218 max:+0.00030) Tesla
